@@ -1,0 +1,5 @@
+<h1>Static page</h1>
+{% for block in blocks %}
+    {{ dump(block) }}
+    {{ sonata_block_render({ 'type': block.type }, block.getJsonDecoded) }}
+{% endfor %}

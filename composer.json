@@ -1,0 +1,28 @@
+{
+    "name": "melodia/page-bundle",
+    "type": "symfony-bundle",
+    "description": "",
+    "license": "MIT",
+    "keywords": ["page"],
+    "homepage": "http://github.com/melodia/MelodiaPageBundle",
+    "authors": [
+        {
+            "name": "Alexey Ryzhkov",
+            "email": "alioch@yandex.ru"
+        }
+    ],
+    "require": {
+         "sonata-project/block-bundle": "2.2.*",
+         "friendsofsymfony/rest-bundle": "~1.4",
+         "nelmio/api-doc-bundle": "~2.7",
+         "stof/doctrine-extensions-bundle": "~1.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "Melodia\\PageBundle": ""
+        }
+    },
+    "minimum-stability": "stable",
+    "target-dir": "Melodia/PageBundle"
+}
+

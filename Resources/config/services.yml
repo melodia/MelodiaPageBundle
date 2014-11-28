@@ -1,0 +1,10 @@
+parameters:
+    melodia.page.twig.page_extension.class: Melodia\PageBundle\Twig\PageExtension
+
+services:
+    melodia.page.twig.page_extension:
+        class: %melodia.page.twig.page_extension.class%
+        arguments:
+            - @sonata.block.templating.helper
+        tags:
+            - { name: twig.extension }

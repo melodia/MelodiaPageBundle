@@ -1,0 +1,7 @@
+# This route is supposed to match all urls,
+# so it should be the last one.
+melodia_page_wildcard:
+    pattern:  /{url}
+    defaults: { _controller: MelodiaPageBundle:Page:index, url: null }
+    requirements:
+        url: ".+"

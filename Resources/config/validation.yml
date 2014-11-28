@@ -1,0 +1,17 @@
+Melodia\PageBundle\Entity\Page:
+    properties:
+        url:
+            - NotBlank: ~
+        title:
+            - NotBlank: ~
+        description:
+            - NotBlank: ~
+        keywords:
+            - NotBlank: ~
+
+Melodia\PageBundle\Entity\PageBlock:
+    properties:
+        type:
+            - NotBlank: ~
+        json:
+            - NotBlank: ~

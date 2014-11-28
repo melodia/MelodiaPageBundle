@@ -1,0 +1,3 @@
+melodia_api_page:
+    type:     rest
+    resource: Melodia\PageBundle\Controller\Api\PageController
