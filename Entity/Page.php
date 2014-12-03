@@ -27,12 +27,18 @@ class Page
     protected $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="PageTemplate", inversedBy="pages", cascade={"persist"})
+     * @ORM\JoinColumn(name="template_id", referencedColumnName="id")
+     */
+    protected $template;
+
+    /**
      * One-To-Many unidirectional association
      *
      * @ORM\ManyToMany(targetEntity="PageBlock", cascade={"persist", "remove"})
-     * @ORM\JoinTable(name="pages_pblocks",
+     * @ORM\JoinTable(name="pages__page_blocks",
      *     joinColumns={@ORM\JoinColumn(name="page_id", referencedColumnName="id")},
-     *     inverseJoinColumns={@ORM\JoinColumn(name="pblock_id", referencedColumnName="id", unique=true)}
+     *     inverseJoinColumns={@ORM\JoinColumn(name="page_block_id", referencedColumnName="id", unique=true)}
      * )
      *
      * @Groups({"getOnePageBlock"})
@@ -100,6 +106,18 @@ class Page
     public function getId()
     {
         return $this->id;
+    }
+
+    public function setTemplate(PageTemplate $template = null)
+    {
+        $this->template = $template;
+
+        return $this;
+    }
+
+    public function getTemplate()
+    {
+        return $this->template;
     }
 
     /**
@@ -295,14 +313,14 @@ class Page
     public function setKeywords($keywords)
     {
         $this->keywords = $keywords;
-    
+
         return $this;
     }
 
     /**
      * Get keywords
      *
-     * @return string 
+     * @return string
      */
     public function getKeywords()
     {

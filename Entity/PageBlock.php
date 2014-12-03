@@ -8,7 +8,7 @@ use JMS\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="pblocks")
+ * @ORM\Table(name="page_blocks")
  * @ORM\HasLifecycleCallbacks()
  * @Gedmo\SoftDeleteable(fieldName="deletedAt", timeAware=false)
  */
@@ -54,7 +54,7 @@ class PageBlock
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -70,14 +70,14 @@ class PageBlock
     public function setType($type)
     {
         $this->type = $type;
-    
+
         return $this;
     }
 
     /**
      * Get type
      *
-     * @return string 
+     * @return string
      */
     public function getType()
     {
@@ -93,14 +93,14 @@ class PageBlock
     public function setKeyword($keyword)
     {
         $this->keyword = $keyword;
-    
+
         return $this;
     }
 
     /**
      * Get keyword
      *
-     * @return string 
+     * @return string
      */
     public function getKeyword()
     {
@@ -116,14 +116,14 @@ class PageBlock
     public function setJson($json)
     {
         $this->json = $json;
-    
+
         return $this;
     }
 
     /**
      * Get json
      *
-     * @return string 
+     * @return string
      */
     public function getJson()
     {
@@ -144,14 +144,14 @@ class PageBlock
     public function setDeletedAt($deletedAt)
     {
         $this->deletedAt = $deletedAt;
-    
+
         return $this;
     }
 
     /**
      * Get deletedAt
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDeletedAt()
     {
