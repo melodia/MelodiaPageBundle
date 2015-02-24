@@ -1,4 +1,6 @@
 Melodia\PageBundle\Entity\Page:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: url
     properties:
         url:
             - NotBlank: ~
