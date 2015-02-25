@@ -33,6 +33,16 @@ class PageRepository extends BaseRepository
         }
     }
 
+    public function findByUrlPart($urlPart)
+    {
+        $qb = $this->createQueryBuilder('entity');
+        $qb->where('entity.url LIKE :urlPart')
+            ->andWhere('entity.isActive = true')
+            ->setParameter('urlPart', '%' . $urlPart . '%');
+
+        return $qb->getQuery()->getResult();
+    }
+
     /**
      * Find only active pages.
      *
